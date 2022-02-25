@@ -352,7 +352,7 @@ class Step(Registrable, Generic[T]):
         return self.work_dir_for_run
 
     @property
-    def workspace(self) -> Workspace:
+    def workspace(self) -> "Workspace":
         """
         The :class:`~tango.workspace.Workspace` being used.
 
