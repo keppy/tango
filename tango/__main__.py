@@ -615,6 +615,7 @@ def _run(
     step_graph = StepGraph(params.pop("steps", keep_as_dict=True))
     params.assert_empty("'tango run'")
     run = workspace.register_run(step for step in step_graph.values())
+    workspace.current_run = run
 
     # Capture logs to file.
     with workspace.capture_logs_for_run(run.name):

@@ -227,6 +227,20 @@ class Workspace(Registrable):
 
     def __init__(self):
         self._delayed_cleanup_temp_dirs: List[TemporaryDirectory] = []
+        self._current_run: Optional[Run] = None
+
+    @property
+    def current_run(self) -> Optional[Run]:
+        """
+        The current :class:`Run`.
+        """
+        return self._current_run
+
+    @current_run.setter
+    def current_run(self, run: Run) -> None:
+        # Make sure the run has been registered.
+        self.registered_run(run.name)
+        self._current_run = run
 
     @classmethod
     def from_url(cls, url: str) -> "Workspace":

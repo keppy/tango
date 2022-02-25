@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a utility function to get a `StepGraph` directly from a file.
 - Added `tango.settings` module and `tango settings` group of commands.
 - A format for storing sequences as `SqliteSparseSequence`.
+- Added a convenience property `.workspace` to `Step` class that can be called from a step's `.run()` method to get the current `Workspace` being used.
+- Added a property `.current_run` to `Workspace` that gives the current `Run` being executed.
 
 ### Changed
 
