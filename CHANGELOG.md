@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - A format for storing sequences as `SqliteSparseSequence`.
 - Added a convenience property `.workspace` to `Step` class that can be called from a step's `.run()` method to get the current `Workspace` being used.
 - Added a property `.current_run` to `Workspace` that gives the current `Run` being executed.
+- A format for storing sequences as `SqliteSparseSequence`
+- A way to massage kwargs before they determine the unique ID of a `Step`
 
 ### Changed
 
@@ -43,6 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `MappedSequence` now works with Huggingface `Dataset`.
 - Uncacheable steps are now visible in Tango UI.
 - Fixed bug in `Registrable.list_available()` where an error might be raised if the default implementation hadn't been explicitly imported.
+- Fixed issue where having a default argument to the `run()` method wasn't getting applied to the step's unique ID.
 
 
 ## [v0.5.0](https://github.com/allenai/tango/releases/tag/v0.5.0) - 2022-02-09
